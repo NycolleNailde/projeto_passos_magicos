@@ -131,7 +131,7 @@ with tab0:
 
     - __IDA__: Indicador de Desempenho acadêmico;
     - __IEG__: Indicador de Engajamento;
-    - __IAN__: Indicador de Adequação de nível;
+    - __IAN__: Indicador de Adequação de Nível;
     - __IAA__: Indicador de Autoavaliação;
     - __IPV__: Indicador de Ponto de Virada;
     - __IPS__: Indicador Psicossocial;
@@ -162,7 +162,7 @@ with tab0:
     mais detalhada do impacto das condições socioeconômicas e das oportunidades educacionais nos resultados dos 
     alunos.
 
-    Já para o __Grupo B__, a análise foi conduzida com uma abordagem estística, utilizando técnicas de machine 
+    Já para o __Grupo B__, a análise foi conduzida com uma abordagem estatística, utilizando técnicas de machine 
     learning, especificamente com um modelo de regressão logística. O foco foi explorar a relação entre os 
     diversos indicadores avaliados e a evasão da Passos Mágicos. O objetivo central foi prever e identificar os 
     alunos com maior risco
@@ -216,7 +216,7 @@ with tab1:
     7.15 para 5.10. Essa queda foi o principal fator responsável pela redução na média geral do IDA, destacando a 
     vulnerabilidade desses alunos, cujo aprendizado foi bastante prejudicado pela pandemia. Contudo, é notável que esses 
     alunos também apresentaram a :orange[maior recuperação no IDA em 2022]. Isso sugere que, :orange[o apoio 
-    oferecido pela Passos Mágicos foi essencial para ajudar os alunos a superar parte dos impactos negativos]. 
+    oferecido pela Passos Mágicos foi essencial para ajudar os alunos a superar parte dos impactos negativos do período da pandemia]. 
     
 
     ### IAN
@@ -272,7 +272,7 @@ with tab2:
     para a predição. 
 
     Já para a classe de alunos evadidos, a precisão indica que apenas 44% das previsões de alunos evadidos estão
-    corretas, e isso pode ser explicado pela presença de falsos positivo já identificada. Por outro lado, o recall
+    corretas, e isso pode ser explicado pela presença de falsos positivos já identificada. Por outro lado, o recall
     é mais elevado (0.64), mostrando que o modelo é capaz de capturar uma quantidade significativa (64%) dos alunos 
     que efetivamente evadiram. 
 
