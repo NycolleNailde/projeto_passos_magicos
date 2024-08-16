@@ -365,8 +365,8 @@ with tab3:
     evasão. Isso permite que a Passos Mágicos adote intervenções direcionadas, monitorando de perto os alunos que apresentam sinais de 
     vulnerabilidade, garantindo assim que mais alunos possam se beneficiar do acompanhamento e do apoio fornecido pela associação.
 
-    A ferramenta de previsão e as estratégias de suporte pode ajudar a Passos Mágicos a continuar a transformar vidas, garantindo que cada 
-    aluno tenha a chance de prosperar tanto acadêmica quanto pessoalmente.
+    :orange[__A ferramenta de previsão e as estratégias de suporte pode ajudar a Passos Mágicos a continuar a transformar vidas, garantindo que cada 
+    aluno tenha a chance de prosperar tanto acadêmica quanto pessoalmente__].
 
     '''
 
