@@ -114,50 +114,79 @@ tab0, tab1, tab2, tab3= st.tabs(['Geral','Evolução dos Indicadores', 'Previsã
 
 with tab0:    
     '''
-    ### Sobre a Passos Mágicos
+    ## Sobre a Passos Mágicos
+    A Passos Mágicos é uma associação dedicada a utilizar a educação como uma ferramenta de transformação para 
+    crianças e jovens em situação de vulnerabilidade social no município de Embu-Guaçu - SP. A associação 
+    desenvolveu um índice sintético abrangente que integra uma série de avaliações sobre o progresso educacional 
+    de seus alunos. Esse índice é composto por diversos indicadores cuidadosamente selecionados, que refletem 
+    os princípios e valores da instituição. Esses indicadores permitem medir o impacto das ações 
+    psicopedagógicas realizadas, fornecendo uma análise detalhada do desenvolvimento educacional de cada aluno.
 
-    Essa análise é focada nos alunos em fase escolar, por isso, foram removidos os alunos da fase 8, uma vez que já são 
-    universitários e apresentam um perfil distinto dos demais. Selecionando apenas os alunos das fases 0 a 7, separou-se dois 
-    grupos diferentes para estudo:
+    A fórmula abaixo ilustra como o INDE (Índice de Desenvolvimento Educacional) é calculado, sendo composto 
+    por múltiplos indicadores que contribuem para uma visão holística do progresso acadêmico:'''
+    st.latex(r'''INDE = 0.2 \cdot IDA + 0.2 \cdot IEG + 0.1 \cdot IAN + 0.1 \cdot IAA + 0.2 \cdot IPV + 0.1 \cdot IPS + 0.1 \cdot IPP''')
 
-    - **Grupo A:** Alunos que permaneceram na Passos Mágicos durante os três anos analisados (2020, 2021 e 2022);
-    - **Grupo B:** Alunos que, em algum momento, deixaram de fazer parte da Passos Mágicos.
+    '''
+    Os indicadores que compõem o INDE são os seguintes:
 
-    Para o **Grupo A**, foram calculadas as médias dos indicadores em cada ano para identificar o comportamento desses dados 
-    ao longo do tempo. Além de calcular as médias gerais dos índices para todos os alunos desse grupo, subdividimos o 
-    **Grupo A** em três subgrupos para análises mais detalhadas:
+    - __IDA__: Indicador de Desempenho acadêmico;
+    - __IEG__: Indicador de Engajamento;
+    - __IAN__: Indicador de Adequação de nível;
+    - __IAA__: Indicador de Autoavaliação;
+    - __IPV__: Indicador de Ponto de Virada;
+    - __IPS__: Indicador Psicossocial;
+    - __IPP__: Indicador Psicopedagógico.
 
-    - Alunos da rede pública durante os três anos;
-    - Alunos bolsistas durante os três anos;
-    - Alunos que ganharam bolsa em 2021;
+    
+    ## Sobre a análise dos dados
 
-    Essa subdivisão permitiu observar os diferentes comportamentos dos índices, ao calcular as médias separadamente para cada 
-    subgrupo.
+    Foram disponibilizados dados anonimizados de alunos nos anos de 2020, 2021 e 2022. 
+    Esta análise foca exclusivamente nos alunos em idade escolar, removendo aqueles da Fase 8 (universitários), 
+    cujos perfis diferem dos demais. A análise concentra-se, portanto, 
+    nos alunos das Fases 0 a 7, os quais foram divididos em dois grupos principais, cada um abordado de maneira 
+    distinta:
+    - __Grupo A:__ Alunos que permaneceram na Passos Mágicos ao longo dos três anos analisados (2020, 2021 e 2022)
+    - __Grupo B:__ Alunos que, em algum momento, deixaram de fazer parte da Passos Mágicos.
 
-    Para o **Grupo B**, conduzimos uma análise de correlação entre as notas dos diversos índices e o fato de o aluno ter 
-    desistido em algum momento ou não.
+    Para o __Grupo A__, a abordagem foi mais analítica. Foram calculadas as médias dos indicadores educacionais 
+    para cada ano, com o objetivo de 
+    identificar tendências e mudanças no comportamento desses dados ao longo do tempo. Além disso, o grupo 
+    foi subdividido em três subgrupos para uma análise ainda mais profunda:
+
+    - Alunos da rede pública ao longo todos os três anos;
+    - Alunos que obtiveram bolsa em 2021;
+    - Alunos bolsistas durante todo o período.
+    
+
+    Essa subdivisão permite identificar padrões específicos entre os diferentes perfis, proporcionando uma visão 
+    mais detalhada do impacto das condições socioeconômicas e das oportunidades educacionais nos resultados dos 
+    alunos.
+
+    Já para o __Grupo B__, a análise foi conduzida com uma abordagem estística, utilizando técnicas de machine 
+    learning, especificamente com um modelo de regressão logística. O foco foi explorar a relação entre os 
+    diversos indicadores avaliados e a evasão da Passos Mágicos. O objetivo central foi prever e identificar os 
+    alunos com maior risco
+    de evasão, permitindo a implementação de estratégias preventivas direcionada a esses estudantes. 
     '''
 
 with tab1:    
     '''
-    ## Análise do Histórico
-
-    ### Histórico Geral dos Alunos
+    ## Histórico Geral dos Alunos
     '''
     st.plotly_chart(plota_indices(df_result,'Médias dos Indicadores dos alunos com histórico entre 2020 e 2022'))
     
     '''  
-    A média geral do INDE apresentou um declínio considerável, influenciado diretamente pela queda no IDA e no IEG, que têm 
-    maior peso na composição do índice. Além disso, a acentuada redução no IAN e no IPP ao longo dos anos sugere que fatores 
-    emocionais e comportamentais estão impactando negativamente o desempenho acadêmico dos alunos.
+    A média geral do INDE apresentou um declínio considerável, influenciado principalmente pelas quedas no IDA e no IEG, que têm 
+    maior peso na composição desse índice. Além disso, houve uma acentuada redução no IAN e no IPP ao longo dos anos, sugerindo 
+    que fatores emocionais e comportamentais podem estar impactando negativamente o desempenho acadêmico dos alunos.
 
     Por outro lado, observa-se uma recuperação no IDA e no IEG em 2022, indicando que, apesar das dificuldades enfrentadas, 
     os alunos começaram a retomar seu engajamento nas atividades escolares. Essa recuperação pode estar relacionada ao retorno 
-    gradual à normalidade após o período crítico da pandemia, com um ambiente mais favorável ao aprendizado.
+    gradual à normalidade após o período crítico da pandemia, criando um ambiente mais favorável ao aprendizado.
 
-    Os indicadores IAA, IPV e IPS, por sua vez, mostraram uma estabilidade relativa ao longo dos três anos, sugerindo que a 
-    percepção dos alunos sobre suas capacidades e o impacto da educação em suas vidas não foi profundamente afetada pelas 
-    mudanças ocorridas nesse período.
+    Os indicadores IAA, IPV e IPS, por outro lado, mantiveram-se relativamente estáveis ao longo dos três anos. Isso sugere que 
+    :orange[a percepção dos alunos da Passos Mágicos sobre suas capacidades e o impacto da educação em suas vidas não foi profundamente 
+    afetada pelas mudanças ocorridas no período de pandemia].
 
     
 
@@ -171,54 +200,55 @@ with tab1:
     
 
     '''
-    Os índices médios dos estudantes da rede pública foram, em geral, menores que os dos demais grupos, evidenciando o impacto 
-    positivo das bolsas de estudo no desempenho dos alunos. Para os três subgrupos analisados, o __INDE__ apresentou uma queda em 
-    2021, o que demonstra que os efeitos da pandemia foram sentidos por todos. No entanto, esse impacto foi mais acentuado 
-    entre os alunos da rede pública, o que enfatiza o efeito positivo das bolsas.
+    Quando analisamos os diferentes subgrupos, os alunos da rede pública apresentaram, em geral, indicadores médios 
+    inferiores aos dos demais grupos, o que evidencia o impacto positivo das bolsas de estudo no desempenho acadêmico. 
+    Foi observada uma queda no __INDE__ em 2021, o que demonstra que os efeitos da pandemia foram sentidos por todos. No entanto, 
+    esse impacto foi mais acentuado 
+    entre os alunos da rede pública, o que enfatiza outro :orange[efeito positivo das bolsas].
 
 
-    #### IDA e IEG
-    O __IEG__ caiu em 2021 para todos os subgrupos, mas recuperou-se em 2022.  Destaca-se o grupo de alunos que ganharam bolsa em 
-    2021, que mostrou maior **IEG** do que os demais subgrupos, além de uma queda menos acentuada. Ou seja, :orange[a aquisição da bolsa
-    afetou diretamente o engajamento e motivação do aluno].
+    ### IDA e IEG
+    O __IEG__ caiu em 2021 para todos os subgrupos, mas mostrou recuperação em 2022.  Destaca-se o grupo de alunos que ganharam bolsa em 
+    2021, que apresentou maior engajamento (IEG) do que os demais grupos, além de uma queda menos acentuada. Ou seja, :orange[a concessão 
+    da bolsa teve um impacto positivo direto no engajamento e na motivação desses alunos].
     
-    O __IDA__ também sofreu uma queda em 2021, especialmente entre os alunos da rede pública, cujo desempenho caiu de 
-    7.15 para 5.10. Essa diminuição foi o principal fator por trás da redução na média geral do IDA, destacando a 
-    vulnerabilidade desses alunos, cujo aprendizado foi bastante prejudicado pela pandemia. No entanto, é notável que esses 
-    alunos também apresentaram a :orange[maior recuperação no IDA em 2022]. Isso sugere que, apesar das dificuldades, o apoio 
-    oferecido pela Passos Mágicos foi crucial para ajudar os alunos a reverter parte dos impactos adversos. 
+    O __IDA__ também sofreu uma queda em 2021, particularmente entre os alunos da rede pública, cujo desempenho acadêmico caiu de 
+    7.15 para 5.10. Essa queda foi o principal fator responsável pela redução na média geral do IDA, destacando a 
+    vulnerabilidade desses alunos, cujo aprendizado foi bastante prejudicado pela pandemia. Contudo, é notável que esses 
+    alunos também apresentaram a :orange[maior recuperação no IDA em 2022]. Isso sugere que, :orange[o apoio 
+    oferecido pela Passos Mágicos foi essencial para ajudar os alunos a superar parte dos impactos negativos]. 
     
 
-    #### IAN
-    O __IAN__ (Indicador de Adequação de Nível) diminuiu para quase todos os grupos ao longo dos anos, exceto para os alunos 
-    que ganharam bolsa em 2021, que mostraram um aumento modesto em 2021 seguido de uma leve queda em 2022. Este fenômeno 
-    sugere que os alunos que receberam bolsa estavam mais alinhados com o nível esperado. Enquanto os alunos que apenas na rede
-    pública, ou apenas na rede privada nesses três anos, o sugere a necessidade de atenção para os efeitos das
-    :orange[estratégias para ajudar os alunos a alcançarem seu nível ideal], especialmente para aqueles que não têm acesso a bolsas.
+    ### IAN
+    O __IAN__ (Indicador de Adequação de Nível) mostrou uma tendência de queda para quase todos os grupos ao longo dos anos, com 
+    exceção dos alunos que receberam bolsa em 2021, que apresentaram um aumento modesto no indicador naquele ano, seguido de uma 
+    leve queda em 2022. Este fato sugere que os alunos que obtiveram bolsa estavam mais alinhados com o nível esperado. Para os 
+    alunos exclusivamente da rede pública ou privada durante os três anos, os dados apontam a necessidade de maior :orange[atenção 
+    e foco nas estratégias para ajudar os alunos a alcançarem seu nível adequado], especialmente para aqueles que não possuem a bolsa.
 
-    #### IAA
+    ### IAA
 
-    Em 2020, o __IAA__ médio de todos os grupos era próximo de 8.7. Em 2021, o IAA se manteve estável entre os alunos que já tinha bolsa
-    em 2020, o que é um sinal positivo. Isso indica que, apesar das dificuldades acadêmicas enfrentadas, esses alunos conseguiram 
-    :orange[manter uma visão consistente sobre suas próprias capacidades]. 
+    Em 2020, o __IAA__ médio de todos os grupos era próximo de 8.7. Em 2021, o indicador manteve-se estável entre os alunos com
+    bolsa em 2020, um sinal positivo de que, apesar das dificuldades acadêmicas enfrentadas (queda de IDA e IEG), :orange[os bolsistas
+    da Passos Mágicos conseguiram manter uma visão consistente sobre suas próprias capacidades]. 
     
-    Em contraste, os alunos da rede pública e aqueles que receberam bolsa em 2021 experimentaram uma queda no IAA. Ou seja,
-    período de pandemia abalou mais a autopercepção desses alunos, destacando a necessidade de :orange[suporte adicional para 
-    restaurar a confiança].
+    Em contraste, os alunos da rede pública apresentaram uma queda no __IAA__ de 8.7 para 8.0. Ou seja,
+    período de pandemia afetou mais a autopercepção desse grupo, enfatizando a necessidade de :orange[suporte adicional para 
+    restaurar a confiança] desses alunos.
 
     ### IPP
 
-    Ao separar os grupos, observa-se que o __IPP__ permaneceu estável para os alunos com bolsa desde 2020. Isso sugere que, 
-    para esses alunos, o desenvolvimento cognitivo e emocional foi mais consistente. O aumento observado na média geral em 2021, 
-    seguido por uma queda acentuada em 2022, está mais relacionado aos demais subgrupos. Portanto, é nesses subgrupos que deve 
-    haver um :orange[foco maior para o suporte ao desenvolvimento emocional e comportamental] dos alunos.
+    Analisando os subgrupos, observa-se que o __IPP__ permaneceu estável para os alunos com bolsa desde 2020, indicando que :orange[o 
+    efeito a longo prazo da bolsa em escola particular favoreceu o desenvolvimento cognitivo e emocional mais consistente]. 
+    O aumento observado na média geral do IPP em 2021, seguido por uma queda acentuada em 2022, está mais relacionado aos estudantes da 
+    rede pública e aos estudantes que adquiram bolsa mais recentemente. 
 
     '''
     
 
 with tab2:
     '''
-    ### Análise da Relação entre Indicadores e a Evasão de Alunos
+    ## Análise da Relação entre Indicadores e a Evasão de Alunos
 
     Foi realizada uma análise da correlação entre a evasão de alunos e os indicadores de desempenho do ano 
     anterior. Embora a correlação geral seja fraca, os indicadores INDE, IDA e IEG se destacam com correlações 
@@ -256,7 +286,7 @@ with tab2:
     submetidos a avaliações adicionais.
 
 
-    ### Cálculo do risco de evasão
+    ## Cálculo do risco de evasão
 
     A seguir está a ferramenta que é capaz de calcular a previsão segundo o modelo do estudo, a partir dos 
     valores dos indicadores IDA, IEG e INDE.
@@ -270,17 +300,25 @@ with tab2:
     if st.button('Calcular Risco'):
         previsao = prever_evasao(ida, ieg, inde,modelo)
         if previsao == 1:
-            st.write('Observação: :red[Risco alto de evasão]')
+            st.write(':red[__Risco alto de evasão__]')
         else:
-            st.write('Observação: :green[Risco menor de evasão]')
+            st.write(':green[__Risco menor de evasão__]')
 with tab3:
     '''
-    ###
-     - Além de ajudar os alunos a dimunuir a xefasagem a Passos também dá a oportunidade dos alunos a obterem bolsa em
-     escola particulares. O que visivelmente contribui para ...
-     - Para os alunos da rede publica é preciso dar atenção e impulsionar o alunos para maximizar...
-     - E para os alunos que ingressam em escolas particular, é preciso dar surporte para os alunos enfrentarem as dificuldades ...
-     - Os indicadores IDA e IEG são muito relevantes para tentar prevenir a desistência dos alunos da Passos Mágicos.
-     - Em gersal os alunos com histórco de bolsa se adaptaram bem a nova escola e, além de apresentarem os maiores índices médios,
-     também apresentaram as menores quedas. Evidenciando a mudança na vida dessas crianças.
+    ## Contribuições deste trabalho
+
+    A Passos Mágicos desempenha um papel essencial no desenvolvimento acadêmico, cognitivo e emocional de seus alunos. 
+    O acompanhamento contínuo e a concessão de bolsas de estudo em escolas particulares têm mostrado impactos extremamente positivos, 
+    ajudando a mitigar os desafios trazidos pela pandemia e outros fatores externos. Esses benefícios 
+    ficaram ainda mais evidentes em 2022, quando muitos alunos conseguiram recuperar o desempenho e engajamento escolar após o período 
+    desafiador da pandemia. A concessão de bolsas tem sido um diferencial na vida dos alunos, e isso é refletido nos indicadores 
+    consistentemente superiores apresentados pelos bolsistas em comparação aos alunos da rede pública.
+
+    Além disso, o estudo de machine learning apresentou uma ferramenta promissora para a identificação precoce dos alunos em risco de 
+    evasão. Isso permite que a Passos Mágicos adote intervenções direcionadas, monitorando de perto os alunos que apresentam sinais de 
+    vulnerabilidade, garantindo assim que mais alunos possam se beneficiar do acompanhamento e do apoio fornecido pela associação.
+
+    A ferramenta de previsão e as estratégias de suporte pode ajudar a Passos Mágicos a continuar a transformar vidas, garantindo que cada 
+    aluno tenha a chance de prosperar tanto acadêmica quanto pessoalmente.
+
     '''
