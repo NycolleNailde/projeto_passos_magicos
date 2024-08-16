@@ -167,7 +167,24 @@ with tab0:
     diversos indicadores avaliados e a evasão da Passos Mágicos. O objetivo central foi prever e identificar os 
     alunos com maior risco
     de evasão, permitindo a implementação de estratégias preventivas direcionada a esses estudantes. 
+
+
     '''
+    st.markdown("---")
+    st.markdown(
+            """
+            <style>
+            .small-font {
+             font-size: 12px;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+    )
+    st.markdown(
+        '<span class="small-font"> Análise elaborada por Nycolle Nailde de O. B. Pontes </span>',
+        unsafe_allow_html=True
+        )
 
 with tab1:    
     '''
@@ -244,7 +261,21 @@ with tab1:
     rede pública e aos estudantes que adquiram bolsa mais recentemente. 
 
     '''
-    
+    st.markdown("---")
+    st.markdown(
+            """
+            <style>
+            .small-font {
+             font-size: 12px;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+    )
+    st.markdown(
+        '<span class="small-font"> Análise elaborada por Nycolle Nailde de O. B. Pontes </span>',
+        unsafe_allow_html=True
+        )
 
 with tab2:
     '''
@@ -303,6 +334,22 @@ with tab2:
             st.write(':red[__Risco alto de evasão__]')
         else:
             st.write(':green[__Risco menor de evasão__]')
+
+    st.markdown("---")
+    st.markdown(
+            """
+            <style>
+            .small-font {
+             font-size: 12px;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+    )
+    st.markdown(
+        '<span class="small-font"> Análise elaborada por Nycolle Nailde de O. B. Pontes </span>',
+        unsafe_allow_html=True
+        )
 with tab3:
     '''
     ## Contribuições deste trabalho
@@ -322,3 +369,19 @@ with tab3:
     aluno tenha a chance de prosperar tanto acadêmica quanto pessoalmente.
 
     '''
+
+    st.markdown("---")
+    st.markdown(
+            """
+            <style>
+            .small-font {
+             font-size: 12px;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+    )
+    st.markdown(
+        '<span class="small-font"> Análise elaborada por Nycolle Nailde de O. B. Pontes </span>',
+        unsafe_allow_html=True
+        )
